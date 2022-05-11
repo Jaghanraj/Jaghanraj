@@ -1,0 +1,61 @@
+ package mapExample;
+
+public class MapRunner {
+
+    public static void main(String[] args) {
+        MapExample oMapExample = new MapExample();
+        oMapExample.hashMap();
+        System.out.println();
+        oMapExample.linkedHashMap();
+        System.out.println();
+        oMapExample.treeMap();
+        System.out.println();
+
+    }
+
+}
+package mapExample;
+
+import java.util.*;
+
+public class MapExample {
+    
+    void hashMap()
+    {
+        Map <Integer,String> map = new HashMap <Integer,String>();
+        map.put(2047,"jaga");
+        map.put(3208,"jaghan");
+        map.put(2832,"raj");
+        map.put(1923,"hari");
+        map.put(2367, "haran");
+        System.out.println("Hash Map values:"+map);
+    }
+
+    void linkedHashMap()
+    {
+        Map <Integer,String> map = new LinkedHashMap <Integer,String>();
+        map.put(2047,"jaghan");
+        map.put(3208,"raj");
+        map.put(2832,"srinivasan");
+        map.put(1923,"hari");
+        map.put(2367, "haran");
+        System.out.println("Linked Hash Map values:"+map);
+    }
+    
+    void treeMap()
+    {
+        Map <Integer,String> map = new TreeMap <Integer,String>();
+        map.put(2047,"jaghan");
+        map.put(3208,"raj");
+        map.put(2832,"jaga");
+        map.put(1923,"hari");
+        map.put(2367, "haran");
+        for(@SuppressWarnings("rawtypes") Map.Entry m:map.entrySet()){  
+               System.out.println(m.getKey()+" "+m.getValue());  
+        }
+        System.out.println();
+        ArrayList<Integer> keys = new ArrayList<Integer>(map.keySet());
+        for(int i=keys.size()-1; i>=0;i--){
+            System.out.println(map.get(keys.get(i)));
+        }
+
